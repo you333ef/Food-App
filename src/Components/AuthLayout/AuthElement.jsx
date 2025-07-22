@@ -1,7 +1,6 @@
 import React from 'react'
 import { Outlet } from 'react-router-dom'
-import Auth from '/Food App/src/Components/AuthLayout/auth.module.css'
-
+import Auth from "./auth.module.css";
 const AuthElement = () => {
   return (
     <div className={Auth.auth}>
