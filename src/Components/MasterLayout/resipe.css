@@ -1,0 +1,16 @@
+@media(max-width:1024px){
+    .Hidden_in_res{
+        display: none;
+    }
+}
+.ImageWesha ,.NFC{
+  width: 56px;
+  height: 56px;
+  border-radius: 10px;
+}
+.centered-cell {
+  text-align: center;
+  vertical-align: middle;
+}
+
+

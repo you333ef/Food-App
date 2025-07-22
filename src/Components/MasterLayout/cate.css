@@ -1,0 +1,167 @@
+
+.CategoriesDetails{
+font-weight: 700;
+font-size: 22px;
+}
+.Youcheck{
+    font-weight: 500;
+}
+.bootnYastaCate{
+    font-weight: 700;
+    font-size: 15px;
+}
+.OOP{
+    overflow: hidden;
+}
+@media(max-width: 564px) {
+   .oop3{
+display: block;
+justify-content: center;
+align-items: center;
+margin: auto;
+text-align: center;
+
+}
+.bootnYastaCate{
+    margin: 5px;
+}
+}
+.table th, .table td {
+  vertical-align: middle;
+  text-align: center;
+}
+.Namme{
+      vertical-align: middle;
+  text-align: center;
+}
+@media(max-width: 900px) {
+   .paginatinLap{
+    display: none !important;
+}
+
+}
+
+ .paginatin_Mapile_Tap{
+    display: none !important;
+}
+@media(max-width: 768px) {
+   .paginatin_Mapile_Tap{
+    display: flex !important;
+    color: rgb(5, 5, 6) !important;
+}
+}
+.cont-ba7th {
+  /* زي .search-container بالظبط */
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.wrap-ba7th {
+  /* زي .search-wrapper */
+  position: relative;
+  width: 100%;
+}
+
+.in-ba7th {
+  /* زي .search-input */
+  width: 100%;
+  height: auto;
+  padding: 10px 50px 10px 20px;
+  font-size: 20px;
+  font-weight: 500;
+  border: 3px solid #e2e8f0;
+  border-radius: 20px;
+  background-color: #ffffff;
+  color: #1a202c;
+  outline: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.in-ba7th::placeholder {
+  color: #a0aec0;
+  font-weight: 400;
+}
+
+.in-ba7th:focus {
+  border-color: #3182ce;
+  box-shadow: 0 0 0 4px rgba(49, 130, 206, 0.1), 0 8px 25px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.in-ba7th:hover {
+  border-color: #4299e1;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+.icon-ba7th {
+  /* زي .search-icon */
+  position: absolute;
+  right: 25px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #a0aec0;
+  pointer-events: none;
+  transition: color 0.3s ease;
+}
+
+.in-ba7th:focus + .icon-ba7th {
+  color: #3182ce;
+}
+
+/* الميديا كويريز زي ما كانت */
+@media (max-width: 768px) {
+  .cont-ba7th {
+    padding: 15px;
+    max-width: 100%;
+  }
+  .in-ba7th {
+    height: 60px;
+    padding: 18px 50px 18px 25px;
+    font-size: 18px;
+    border-radius: 15px;
+  }
+  .icon-ba7th {
+    right: 20px;
+  }
+  .icon-ba7th svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cont-ba7th {
+    padding: 10px;
+  }
+  .in-ba7th {
+    height: 55px;
+    padding: 15px 45px 15px 20px;
+    font-size: 16px;
+    border-radius: 12px;
+  }
+  .icon-ba7th {
+    right: 15px;
+  }
+  .icon-ba7th svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .in-ba7th {
+    background-color: #2d3748;
+    color: #e2e8f0;
+    border-color: #4a5568;
+  }
+  .in-ba7th::placeholder {
+    color: #a0aec0;
+  }
+  .in-ba7th:focus {
+    border-color: #63b3ed;
+    box-shadow: 0 0 0 4px rgba(99, 179, 237, 0.1), 0 8px 25px rgba(0, 0, 0, 0.3);
+  }
+}

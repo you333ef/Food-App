@@ -1,0 +1,30 @@
+/* src/components/Home.css */
+
+/* 1. gradient background */
+.custom-gradient {
+  background:rgba(240, 255, 239, 1);
+}
+
+/* 2. نص بعرض محدود (مثل max-w-md في Tailwind) */
+.custom-max-w-md {
+  max-width: 28rem; /* تقريباً 448px */
+}
+
+/* 3. زرّ بترانزيشن وهوفَر يكبره شويّة */
+.custom-btn {
+  transition: all 0.3s ease;
+  border-radius: 0.5rem; /* rounded-lg */
+}
+.custom-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+.Fill{
+    font-size: 25px;
+    font-weight: 700;
+}
+.bootn{
+    background-color: rgba(0, 146, 71, 1) !important;
+    color: #fff;
+    font-weight: 600;
+}

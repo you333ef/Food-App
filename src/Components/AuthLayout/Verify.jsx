@@ -89,13 +89,11 @@ if(res.status===200 || res.status===201){
               name="password"
               placeholder="OTP"
               className="input-field"
-              {...register('code',{required:'Code is required',
-               pattern: {
-  value: /^\d{4}$/,
-  message: 'Code must be 4 digits',
-},
+          {...register('code', {
+  required: 'Code is required',
+  
+})}
 
-              })}
             />
           </div>
           {errors.code && <p className="error-message ">{errors.code.message}</p>}

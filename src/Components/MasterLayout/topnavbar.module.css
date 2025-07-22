@@ -1,0 +1,107 @@
+/* topnavbar.module.css */
+.TopNavbar_Container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+ 
+  padding: 0.5rem 1rem;
+  background-color:rgba(248, 249, 251, 1);
+
+}
+
+.Left {
+  flex: 1;
+  max-width: 400px; /* تحدد أقصى عرض للبحث */
+
+}
+
+.Left .input-group {
+  width: 100%;
+  border: 1px solid #ddd !important;
+}
+
+.Left input.form-control {
+  border-radius: 24px 0 0 24px;
+  border: 1px solid #ddd;
+  padding: 0.5rem 1rem;
+}
+
+.Left .btn {
+  border-radius: 0 24px 24px 0;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  color: #666;
+}
+
+.Left .btn:hover {
+  background-color: #f5f5f5;
+}
+
+/* اليمين (Avatar + Name + Icons) */
+.right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* الصورة دائرية */
+.right img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* اسم المستخدم */
+.right h5 {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #333;
+}
+
+/* أيقونات */
+.iconWrapper {
+  position: relative;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: #555;
+}
+
+/* النقطة الحمراء فوق الجرس */
+.iconWrapper .dot {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 6px;
+  height: 6px;
+  background-color: #f00;
+  border-radius: 50%;
+}
+
+/* استايلات الاستجابة */
+@media (max-width: 768px) {
+  .Left {
+    max-width: 200px;
+  }
+  .right h5 {
+    display: none; /* نخفي الاسم على الشاشات الصغيرة */
+  }
+  .TopNavbar_Container {
+    padding: 0.5rem;
+  }
+}
+/* في topnavbar.module.css */
+.TopNavbar_Container {
+  /* بقيت الستاييلات عندك... */
+  width: 100%;
+  margin-left: auto;    /* دي السطر الجديد */
+}
+
+/* لو عايز ترجع 100% على الشاشات <1024px */
+@media (max-width: 1024px) {
+  .TopNavbar_Container {
+    width: 100%;
+    margin-left: 0;    /* يبقى عادي على الموبايل */
+  }
+}

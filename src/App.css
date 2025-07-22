@@ -1,0 +1,74 @@
+/* الحاوية الأساسية: sidebar + main جنب بعض */
+.layout {
+  display: flex;
+  height: 100vh;       /* ياخد طول الشاشة كله */
+  overflow: hidden;
+}
+
+/* الـ Sidebar على الشمال */
+.sidebar {
+  flex: 0 0 240px;     /* عرض ثابت 240px */
+  background-color: #1f304a; /* عدّل للون اللي عندك */
+   border-top-right-radius: 8px !important;  
+}
+
+/* الجزء الرئيسي اللي جمب sidebar */
+.main {
+  flex: 1;             /* ياخد باقي العرض */
+  display: flex;
+  flex-direction: column; /* عمودي: أول navbar بعدين content */
+  background-color: #f8f9fb;
+}
+
+/* الـ TopNavbar */
+.topnavbar {
+  flex: 0 0 64px;      /* ارتفاع ثابت 64px */
+  width: 100%;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+  z-index: 1;          /* يفضل فوق المحتوى */
+}
+
+/* محتوى الصفحة تحت الـ navbar */
+.content {
+  flex: 1;             /* ياخد باقي الارتفاع */
+  overflow-y: auto;
+  padding: 1rem;
+  background-color: #000;
+}
+
+/* ميديا كويري للاستجابة */
+@media (max-width: 992px) {
+  .sidebar {
+    flex: 0 0 200px;   /* نصغر sidebar على الشاشات المتوسطة */
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    display: none;     /* نخفيه على الموبايل */
+  }
+}
+.css-dip3t8{
+background-color: rgba(31, 38, 62, 1) !important;
+min-height: 100vh  !important;
+}
+.footert:hover{
+    background-color: rgba(3, 3, 5, 0.8) !important;
+}
+.css-1kt59wx{
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin: auto !important;
+    text-align: center !important;
+
+}
+/* في نفس الملف topnavbar.module.css أو في global.css لو العنصر مش داخل الموديول */
+
+._topnavbar_2ndw5_45 {
+  height: 56px !important;               /* نفس ارتفاع topnavbar */
+  background-color: #f8f9fb !important;  /* نفس لون الخلفية */
+  box-shadow: none !important;           /* لو فيه ظل ظاهر */
+  border: none !important;               /* لو فيه بوردَر */
+}
+

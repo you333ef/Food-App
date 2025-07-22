@@ -95,10 +95,12 @@ const Reset = () => {
               className="input-field"
               {...register('seed', {
                 required: 'Code is required',
-                pattern: {
-                  value: /^[0-9]{4}$/,
-                  message: 'Invalid OTP format',
-                },
+pattern: {
+  value: /^.{4}$/,
+  message: 'Must be exactly 4 characters',
+},
+
+
               })}
 
             />

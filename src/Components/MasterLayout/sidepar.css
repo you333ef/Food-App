@@ -1,0 +1,154 @@
+.sidebar-container {
+  background-color:rgba(31, 38, 62, 1);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  border-radius:0 5px;
+  transition: all 0.3s ease;
+}
+
+.sidebar-desktop {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  z-index: 1040;
+}
+
+.sidebar-desktop.sidebar-open {
+  width: 240px;
+}
+
+.sidebar-desktop.sidebar-collapsed {
+  width: 80px;
+}
+.sidebar-header img{
+  width: 190px;
+
+}
+
+.sidebar-mobile {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 240px;
+  height: 100vh;
+  z-index: 1045;
+}
+
+.sidebar-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+
+
+.toggle-button:hover {
+  background-color: rgba(255, 149, 0, 0.1);
+}
+
+.sidebar-menu {
+  flex: 1;
+  padding: 16px 8px;
+}
+
+.menu-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.menu-item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
+  background: none;
+  border: none;
+  color: white;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: left;
+}
+
+.menu-item:hover {
+  background-color: rgba(12, 12, 11, 0.2);
+  color: #fff;
+}
+
+.menu-item.active {
+  background-color:rgba(12, 12, 11, 0.2);
+  color:#fff;
+ 
+ 
+}
+
+.menu-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color:rgba(7, 7, 7, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  flex-shrink: 0;
+}
+
+.menu-label {
+  margin-left: 12px;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.active-indicator {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background-color:rgba(0, 146, 71, 0.1);
+  border-radius: 0 2px 2px 0;
+}
+
+.sidebar-footer {
+  padding: 16px 8px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.logout-btn {
+  color: white;
+}
+
+.logout-btn:hover {
+  background-color: rgba(220, 53, 69, 0.2);
+  color: #dc3545;
+}
+
+.logout-btn .menu-icon {
+  background-color:rgba(31, 38, 62, 1);
+}
+
+.logout-btn:hover .menu-icon {
+  background-color: #dc3545;
+}
+
+.sidebar-desktop.sidebar-collapsed .menu-item {
+  justify-content: center;
+  padding: 12px 8px;
+}
+
+.sidebar-desktop.sidebar-collapsed .menu-label {
+  display: none;
+}
+
+.sidebar-desktop.sidebar-collapsed .active-indicator {
+  right: 0;
+  left: auto;
+  width: 3px;
+}

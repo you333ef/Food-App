@@ -32,6 +32,8 @@ const Register = () => {
       );
       if (res.status === 200 ) {
         toast.success("Login successful! 🎉");
+       localStorage.setItem('token',res.data.token)
+        
         navigate('/MasterElement/Home');
       } else {
         toast.error('Registration failed');
