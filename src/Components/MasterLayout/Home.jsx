@@ -1,13 +1,19 @@
-import React from "react";
+import React, { useContext } from "react";
 import { FaLongArrowAltRight } from "react-icons/fa";
-import "./home.css";  // استيراد الستايل
+import "./home.css";  
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
+  let navi=useNavigate()
+  let torecipe=()=>{
+navi('/MasterElement/Resipe')
+  }
+ 
   return (
     <div className="w-100 custom-gradient py-2 px-2 mt-3">
       <div className="container d-flex flex-column flex-md-row align-items-center justify-content-between gap-3">
         
-        {/* Text Content */}
+      
         <div className="flex-fill text-center text-md-start">
           <h2 className="Fill">
             Fill the Recipes!
@@ -19,9 +25,9 @@ const Home = () => {
           </p>
         </div>
         
-        {/* Button */}
+       
         <div>
-          <button className="btn bootn">
+          <button className="btn bootn" onClick={torecipe}>
             Fill Recipes
             <FaLongArrowAltRight size={18} className="ms-2" />
           </button>

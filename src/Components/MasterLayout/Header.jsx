@@ -1,19 +1,25 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import iMg1 from '../../assets/eating vegan food-rafiki.svg'
 import iMg2 from '../../assets/Group 48102127.svg'
 import './header.css'
 import { useLocation } from 'react-router-dom'
+import { AuthContext } from '../ConteXt'
 const Header = () => {
-  let loaction=useLocation()
+    const { pathname } = useLocation();
+  const isAdd = pathname === '/MasterElement/Add_Update_Resipe';
+  const isUpdate = pathname.startsWith('/MasterElement/Add_Update_Resipe/update');
+    let {All_Details_User}=useContext(AuthContext)
+
   return (
     <div>
-   <section className="hero-section  mt-4">
+     
+   <section className={isAdd ||isUpdate ?'d-none':"hero-section  mt-4"}>
       <div className="hero-container">
         <div className="hero-content">
 
        {
   location.pathname === '/MasterElement/Home' ? (
-    <h1 className="hero-title">Welcome <span>Upskilling!</span></h1>
+    <h1 className="hero-title">Welcome <span>{All_Details_User?.userName}!</span></h1>
   ) : location.pathname === '/MasterElement/CategoriseList' ? (
     <h1 className="hero-creation">Categories <span>Item!</span></h1>
   )

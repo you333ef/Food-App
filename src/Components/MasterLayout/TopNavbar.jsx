@@ -1,10 +1,11 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import style from './topnavbar.module.css'
 import { LuBellDot } from "react-icons/lu";
 import image from '../../assets/Ellipse 234.svg'
 import { FiSearch, FiChevronDown } from 'react-icons/fi'
 import { useLocation } from 'react-router-dom';
 import axios from 'axios';
+import { AuthContext } from '../ConteXt';
 
 const TopNavbar = () => {
   let location=useLocation()
@@ -17,7 +18,7 @@ const TopNavbar = () => {
       
     }
   }
-
+ let {All_Details_User}=useContext(AuthContext)
 
    // End tag Things 
 
@@ -40,7 +41,7 @@ const TopNavbar = () => {
       </div>
       <div className={style.right}>
         <img src={image} alt="avatar" />
-        <h5>Upskilling</h5>
+        <h5 style={{fontWeight:'700'}}>{All_Details_User?.userName}!</h5>
 
         {/* جرس مع dot */}
         <div className="iconWrapper">

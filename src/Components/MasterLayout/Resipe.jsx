@@ -78,13 +78,13 @@ let URLConcattunation='https://upskilling-egypt.com:3006/'
 let navi=useNavigate()
 let NaviAdd_Update=()=>{
 navi('/MasterElement/Add_Update_Resipe')
- window.location.reload()
+ 
 }
 
 let Navi_Update=(id)=>{
  
-  // navi(`/MasterElement/Add_Update_Resipe/update/${id}`);
-  window.location.reload()
+  navi(`/MasterElement/Add_Update_Resipe/update/${id}`);
+ 
 
  
 }
@@ -179,11 +179,9 @@ const fetchCategoryData = async () => {
     console.log('error',error)
   }
 }
-
 useEffect(()=>{
   fetchCategoryData()
 FunTag()
-
         },[])
       let[saveName,setSaveName]=useState('')
     const GetName = e => {
@@ -191,14 +189,12 @@ FunTag()
   setSaveName(v);
   Fun_Cate_data(4, 1, v,saveTag, saveCate);
 };
-
          let[saveTag,setSaveTag]=useState('')
     const GetTag_value = e => {
   const v = e.target.value;
   setSaveTag(v);
   Fun_Cate_data(4, 1, saveName, v,saveCate);
 };
-
         let[saveCate,setSaveCate]=useState('')
      const GetCate_value = e => {
   const v = e.target.value;
@@ -284,14 +280,18 @@ FunTag()
                 </Modal>
             <div className="container-fluid py-3 OOP">
     <div className="row  align-items-center justify-content-between  oop3">
+      
     <div className="col-auto">
     <h4 className="mb-1 CategoriesDetails">Recipes  Table Details</h4>
     <p className="mb-0 text-muted Youcheck">You can check all details</p>
     </div>
     <div className="col-auto">
-    <button type="button" onClick={NaviAdd_Update} className="btn btn-success bootnYastaCate" >
+      {CurrentUser==='SuperAdmin'?  <button type="button" onClick={NaviAdd_Update} className="btn btn-success bootnYastaCate" >
     Add New Recipes 
-        </button>
+        </button>:  <button type="button" onClick={NaviAdd_Update} className="btn btn-success bootnYastaCate d-none" >
+    Add New Recipes 
+        </button>}
+  
         </div>
       </div>
             </div>
@@ -426,7 +426,23 @@ FunTag()
       <Pagination.Last />
                   </Pagination>
       </div>
-   
+       <div className="cont-ba7th">
+          <div className="wrap-ba7th">
+            <input
+              type="text"
+              className="in-ba7th d-md-none"
+              placeholder="Search by name"
+            
+              onChange={GetName}
+            />
+            <div className="icon-ba7th">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <circle cx="11" cy="11" r="8" />
+                <path d="m21 21-4.35-4.35" />
+              </svg>
+            </div>
+          </div>
+        </div>
       <div className="d-md-none ">
         {dataHmap.map((item, index) => (
           <div key={index} className="bg-white rounded shadow-sm border p-3 custom-card mb-3">
@@ -455,19 +471,21 @@ FunTag()
           </a>
           </li> 
           </li>
-          <li>
+          {/* Edit responsive */}
+          <li className={CurrentUser!=='SuperAdmin'?'d-none':''}>
           <a className="dropdown-item" onClick={() => handleAction('edit', item.id)}>
           <Edit className="me-2 icon-16" /> Edit
           </a>
           </li>
-          <li>
+          {/* Delete responsive */}
+          <li className={CurrentUser!=='SuperAdmin'?'d-none':''}>
           <a className="dropdown-item text-danger" onClick={() => {
     handleAction(item.id);  
     handleShow();
   }}  >
                       <Delete className="me-2 icon-16" /> Delete
                     </a>
-                  </li>
+          </li>
                 </ul>
               </div>
             </div>
@@ -478,7 +496,7 @@ FunTag()
       <div className="col-6 d-flex justify-content-end align-items-center">
         <img
           className="ImageWesha"
-          src={item?.recipe?.imagePath ? `${API_BASE}/${item.recipe.imagePath}` : image_Ehtyati}
+         src={`${URLConcattunation}${item.imagePath}`||`${image_Ehtyati}`}
           alt=""
         />
       </div>

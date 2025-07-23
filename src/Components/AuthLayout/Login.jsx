@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Eye, EyeOff, Mail, Lock } from 'lucide-react';
 import Logo from '../../images/logo.svg';
 import '../AuthLayout/login.css';
@@ -7,6 +7,7 @@ import { useForm } from 'react-hook-form';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
+import { AuthContext } from '../ConteXt';
 
 const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -15,6 +16,7 @@ const Register = () => {
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
   };
+  const { funCurrentUser } = useContext(AuthContext);
 
   const {
     register,
@@ -33,8 +35,8 @@ const Register = () => {
       if (res.status === 200 ) {
         toast.success("Login successful! 🎉");
        localStorage.setItem('token',res.data.token)
-        
         navigate('/MasterElement/Home');
+        funCurrentUser()
       } else {
         toast.error('Registration failed');
       }
@@ -91,10 +93,7 @@ const Register = () => {
                 />
 
               </div>
-                                              {errors.email && <p className="error-message ">{errors.email.message}</p>}
-
-
-
+               {errors.email && <p className="error-message ">{errors.email.message}</p>}
               <div className="input-group mb-1">
                 <div className="input-icon">
                   <Lock className="LockIcon" />
@@ -112,7 +111,6 @@ const Register = () => {
                     },
                   })}
                 />
-
                 <button
                   type="button"
                   onClick={togglePasswordVisibility}

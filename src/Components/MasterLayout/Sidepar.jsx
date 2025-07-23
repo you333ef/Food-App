@@ -17,7 +17,6 @@ const Sidepar = ({ open, onToggle, isSmallScreen }) => {
   const location = useLocation();
   const { CurrentUser } = useContext(AuthContext);
 let LogOut=()=>{
- 
  localStorage.removeItem('token');
  navigate('/Login')
 
@@ -49,6 +48,7 @@ let LogOut=()=>{
     : `sidebar-container sidebar-desktop ${open ? 'sidebar-open' : 'sidebar-collapsed'}`;
 
   return (
+    
     <div className={sidebarClass}>
       <div className="sidebar-header">
        
@@ -83,6 +83,7 @@ let LogOut=()=>{
 
       <div className="sidebar-footer">
         <button
+         onClick={LogOut}
           className="menu-item logout-btn"
          
         >
@@ -90,7 +91,7 @@ let LogOut=()=>{
             <HiLogout size={20} />
           </div>
           {(open || !isSmallScreen) && (
-            <span className="menu-label" onClick={LogOut}>Logout</span>
+            <span className="menu-label">Logout</span>
           )}
         </button>
       </div>
